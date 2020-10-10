@@ -1,0 +1,5 @@
+FROM Python:3.8.6
+
+ADD . .
+
+CMD ["python", "simple-http-server.py"]

@@ -11,11 +11,10 @@ More details can be found on the blog with the link below:
 https://jjayyyyyyy.github.io/2016/10/07/reWrite_SimpleHTTPServerWithUpload_with_python3.html
 """
 
-__version__ = "0.4"
+__version__ = "0.5"
 __all__ = ["SimpleHTTPRequestHandler"]
 __author__ = "bones7456, BUPTGuo, FrozenMap, a.7, yxr"
 __home_page__ = "http://luy.li/, http://buptguo.com, https://jjayyyyyyy.github.io"
-
 
 import os
 import posixpath
@@ -274,7 +273,7 @@ class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
         path = posixpath.normpath(urllib.parse.unquote(path))
         words = path.split('/')
         words = filter(None, words)
-        path = os.getcwd()
+        path = "./.data"
         for word in words:
             drive, word = os.path.splitdrive(word)
             head, word = os.path.split(word)
